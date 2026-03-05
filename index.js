@@ -26,6 +26,9 @@ app.use(methodOverride("_method"));
 app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3000;
+app.get("/", (req, res) => {
+  res.redirect("/view/students");
+});
 
 app.listen(PORT,()=>{
 console.log(`Server running on port ${PORT}`);
